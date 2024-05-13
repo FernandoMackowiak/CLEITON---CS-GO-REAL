@@ -1,0 +1,185 @@
+class Personagem {
+    String nome;
+    int vida;
+    int armadura;
+    
+    public Personagem(String nome, int vida, int armadura) {
+        this.nome = nome;
+        this.vida = vida;
+        this.armadura = armadura;
+    }
+    
+    
+    public void mover() {
+        System.out.println(nome + " está se movendo.");
+    }
+    
+    public void atirar() {
+        System.out.println(nome + " está atirando.");
+    }
+}
+
+
+class Terrorista extends Personagem {
+    public Terrorista(String nome, int vida, int armadura) {
+        super(nome, vida, armadura);
+    }
+}
+
+
+class ContraTerrorista extends Personagem {
+    public ContraTerrorista(String nome, int vida, int armadura) {
+        super(nome, vida, armadura);
+    }
+}
+
+
+class Item {
+    String nome;
+    int preco;
+    
+    public Item(String nome, int preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+    
+    
+    public void comprar() {
+        System.out.println(nome + " foi comprado.");
+    }
+    
+    public void usar() {
+        System.out.println(nome + " foi usado.");
+    }
+}
+
+
+class Arma extends Item {
+    int dano;
+    
+    public Arma(String nome, int preco, int dano) {
+        super(nome, preco);
+        this.dano = dano;
+    }
+}
+
+
+class EquipamentoDefensivo extends Item {
+    int protecao;
+    
+    public EquipamentoDefensivo(String nome, int preco, int protecao) {
+        super(nome, preco);
+        this.protecao = protecao;
+    }
+}
+
+
+class Granada extends Item {
+    public Granada(String nome, int preco) {
+        super(nome, preco);
+    }
+}
+
+
+class Inimigo {
+    String nome;
+    int vida;
+    int dano;
+    
+    public Inimigo(String nome, int vida, int dano) {
+        this.nome = nome;
+        this.vida = vida;
+        this.dano = dano;
+    }
+    
+  
+    public void atacar() {
+        System.out.println(nome + " está atacando.");
+    }
+    
+    public void receberDano(int quantidade) {
+        vida -= quantidade;
+        System.out.println(nome + " recebeu " + quantidade + " de dano. Vida restante: " + vida);
+    }
+}
+
+
+class BotFacil extends Inimigo {
+    public BotFacil(String nome, int vida, int dano) {
+        super(nome, vida, dano);
+    }
+}
+
+
+class BotMedio extends Inimigo {
+    public BotMedio(String nome, int vida, int dano) {
+        super(nome, vida, dano);
+    }
+}
+
+
+class BotDificil extends Inimigo {
+    public BotDificil(String nome, int vida, int dano) {
+        super(nome, vida, dano);
+    }
+}
+
+
+class EntryFragger extends Terrorista {
+    public EntryFragger(String nome, int vida, int armadura) {
+        super(nome, vida, armadura);
+    }
+    
+    
+    public void entrarNoSite() {
+        System.out.println(nome + " está entrando no site.");
+    }
+}
+
+
+class AWPer extends ContraTerrorista {
+    public AWPer(String nome, int vida, int armadura) {
+        super(nome, vida, armadura);
+    }
+    
+    
+    public void mirar() {
+        System.out.println(nome + " está mirando com o AWP.");
+    }
+}
+
+
+class CallLider extends ContraTerrorista {
+    public CallLider(String nome, int vida, int armadura) {
+        super(nome, vida, armadura);
+    }
+    
+    
+    public void coordenarEquipe() {
+        System.out.println(nome + " está coordenando a equipe.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Terrorista terrorista = new Terrorista("Terrorista1", 100, 50);
+        ContraTerrorista contraTerrorista = new ContraTerrorista("CT1", 100, 100);
+        Arma arma = new Arma("AK-47", 2700, 30);
+        EquipamentoDefensivo colete = new EquipamentoDefensivo("Colete", 650, 50);
+        Granada granada = new Granada("Granada de Fumaça", 300);
+        BotFacil botFacil = new BotFacil("BotFacil1", 50, 10);
+        EntryFragger entryFragger = new EntryFragger("Fragger1", 100, 50);
+        AWPer awper = new AWPer("Sniper1", 100, 100);
+        CallLider callLider = new CallLider("Lider1", 100, 100);
+        
+        terrorista.mover();
+        contraTerrorista.atirar();
+        arma.usar();
+        colete.usar();
+        granada.usar();
+        botFacil.atacar();
+        entryFragger.entrarNoSite();
+        awper.mirar();
+        callLider.coordenarEquipe();
+    }
+}
