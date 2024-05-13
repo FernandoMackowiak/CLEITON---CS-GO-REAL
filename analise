@@ -1,0 +1,32 @@
+ANALISE DO TRABALHO - CS:GO
+Personagem:
+
+Classe base que representa um personagem genérico no jogo.
+Atributos: nome, vida, armadura.
+Métodos: mover(), atirar().
+Terrorista e ContraTerrorista:
+
+Subclasses de Personagem que representam os times principais do jogo.
+Herdam atributos e métodos de Personagem e adicionam características específicas dos times.
+Item:
+
+Classe base que representa um item genérico no jogo.
+Atributos: nome, preço.
+Métodos: comprar(), usar().
+Arma, EquipamentoDefensivo e Granada:
+
+Subclasses de Item que representam diferentes tipos de itens utilizáveis no jogo.
+Herdam atributos e métodos de Item e adicionam características específicas dos tipos de itens.
+Inimigo:
+
+Classe base que representa um inimigo genérico no jogo.
+Atributos: nome, vida, dano.
+Métodos: atacar(), receberDano().
+BotFacil, BotMedio e BotDificil:
+
+Subclasses de Inimigo que representam bots controlados por inteligência artificial.
+Herdam atributos e métodos de Inimigo e podem adicionar comportamentos específicos de acordo com o nível de dificuldade.
+EntryFragger, AWPer e CallLider:
+
+Subclasses de Personagem que representam papéis estratégicos específicos no jogo.
+Herdam atributos e métodos de Personagem e podem adicionar habilidades e comportamentos específicos para cada papel.
